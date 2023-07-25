@@ -5,4 +5,6 @@ Dockerfile for debugging networking in Kubernetes
 
 If istio is used and you want to start the container without sidecar injection
 
-`kubectl run -i --tty --rm debug --image=permutation/kube-debug --restart=Never --overrides='{"spec":{"template":{"metadata":{"annotations":{"sidecar.istio.io/inject":"false"}}}}}' -- /bin/sh`
+`kubectl run -i --tty --rm debug --image=permutation/kube-debug --restart=Never \
+--overrides='{ "apiVersion": "v1", "metadata": {"annotations": { "sidecar.istio.io/inject":"false" } } }' \
+-- /bin/sh`
