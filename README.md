@@ -1,7 +1,7 @@
 # kube-debug
 Dockerfile for debugging networking in Kubernetes
 
-`k run -i --tty --rm debug --image=permutation/kube-debug --restart=Never -- /bin/sh`
+`kubectl run -i --tty --rm debug --image=permutation/kube-debug --restart=Never -- /bin/sh`
 
 If istio is used and you want to start the container without sidecar injection
 
